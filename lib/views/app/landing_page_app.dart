@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:landing_page/views/app/widget/tabs_mobile_widget.dart';
+import 'package:landing_page/views/app/widget/teal_container.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,6 +12,7 @@ class LandingPageApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -199,6 +201,48 @@ class LandingPageApp extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(
+            height: 90,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "About me",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 35.0,
+                  ),
+                ),
+                const Text(
+                  "s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 15.0,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Wrap(
+                  spacing: 3.0,
+                  runSpacing: 7.0,
+                  children: const [
+                    TealContainer(text: "Flutter"),
+                    TealContainer(text: "Firebase"),
+                    TealContainer(text: "Android"),
+                    TealContainer(text: "Windows"),
+                  ],
+                )
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 60,
+          )
         ],
       ),
     );
